@@ -352,7 +352,7 @@ public class BenefitTableServlet extends SlingAllMethodsServlet {
 					stateNode = benefitsTableNode.addNode(stateCode,
 							"nt:unstructured");
 				}
-				benefitsTableNode.getSession().save();
+				//benefitsTableNode.getSession().save();
 				Node dataNode = null;
 				Node newDataNode = null;
 
@@ -364,7 +364,7 @@ public class BenefitTableServlet extends SlingAllMethodsServlet {
 				}
 				if (dataNode != null) {
 					dataNode.remove();
-					stateNode.getSession().save();
+					session.save();
 				}
 
 				if (mobileView.equalsIgnoreCase("true")) {
@@ -375,7 +375,7 @@ public class BenefitTableServlet extends SlingAllMethodsServlet {
 							"nt:unstructured");
 				}
 
-				stateNode.getSession().save();
+				//stateNode.getSession().save();
 
 				for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -383,7 +383,7 @@ public class BenefitTableServlet extends SlingAllMethodsServlet {
 					LOGGER.info("arrayObject " + array.toString());
 					Node newRow = newDataNode.addNode("row_" + i,
 							"nt:unstructured");
-					stateNode.getSession().save();
+					//stateNode.getSession().save();
 
 					for (int z = 0; z < array.length(); z++) {
 						String columnKey = "";
@@ -421,7 +421,7 @@ public class BenefitTableServlet extends SlingAllMethodsServlet {
 								keyValue = "";
 							}
 							newRow.setProperty(columnKey, keyValue);
-							session.save();
+							//session.save();
 						}
 					}
 
